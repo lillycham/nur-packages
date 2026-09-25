@@ -10,8 +10,8 @@
   swift,
 }:
 let
-  rev = "7f6b584d0bd3f55c4531f14ba3d4761b2bccdc0f";
-  hf = file: "https://huggingface.co/SmilingWolf/wd-vit-tagger-v3/resolve/${rev}/${file}";
+  modelRev = "7f6b584d0bd3f55c4531f14ba3d4761b2bccdc0f";
+  hf = file: "https://huggingface.co/SmilingWolf/wd-vit-tagger-v3/resolve/${modelRev}/${file}";
 
   model = linkFarm "wd-vit-tagger-v3" {
     "model.onnx" = fetchurl {
@@ -28,17 +28,18 @@ let
     ps.numpy
     ps.onnxruntime
     ps.pillow
+    ps.send2trash
   ]);
 in
 stdenv.mkDerivation {
   pname = "hydrus-tagger";
-  version = "0.1.0";
+  version = "0.2.0";
 
   src = fetchFromGitHub {
     owner = "lillycham";
     repo = "hydrus-tagger";
-    rev = "ac6979202dc5b0326298cbf90b8e2d4a57dfa66b";
-    hash = "sha256-qrkAqXn2uIlttg/9gIsxHDqftL03VVX/yLglLx8duHM=";
+    rev = "558b3690996a62856adaaa0fb75457462b98f917";
+    hash = "sha256-n16xxha2MTbd2hE67+mI5RoMqga20IFjG3l/0fji4/o=";
   };
 
   nativeBuildInputs = [
