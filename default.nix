@@ -9,5 +9,6 @@
   modules = { };
   overlays = { };
 
+  dq = pkgs.callPackage ./pkgs/dq { };
   hydrus-tagger = pkgs.callPackage ./pkgs/hydrus-tagger { };
 }
