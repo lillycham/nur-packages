@@ -9,7 +9,7 @@ in
 {
   # Special attributes for NUR.
   lib = { };
-  modules = { };
+  modules.shiki = ./modules/shiki.nix;
   overlays = { };
 
   akyuu = pkgs.callPackage ./pkgs/akyuu { };
@@ -18,5 +18,7 @@ in
   lambdash = pkgs.callPackage ./pkgs/lambdash { };
   nibble = pkgs.callPackage ./pkgs/nibble { inherit nibble-mlx-server; };
   nibble-gui = pkgs.callPackage ./pkgs/nibble-gui { };
+  shiki = pkgs.callPackage ./pkgs/shiki { };
+  why = pkgs.callPackage ./pkgs/why { };
   inherit nibble-mlx-server;
 }

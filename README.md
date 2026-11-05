@@ -11,12 +11,38 @@ Lilly's [NUR](https://github.com/nix-community/NUR) repository.
 | [nibble](https://github.com/lillycham/nibble) | A small local-model harness for tasks that don't need a big agent |
 | [nibble-gui](https://github.com/lillycham/nibble) | A native chat window for nibble (macOS) |
 | [nibble-mlx-server](https://github.com/lillycham/nibble) | The MLX model server that nibble starts on demand (Apple silicon) |
+| [shiki](https://github.com/lillycham/shiki) | Scheduled probes that serve their results as JSON |
+| [why](https://github.com/lillycham/why) | Explain the origin of a file, command or listening port |
 
 ## Use
 
 With the NUR overlay: `pkgs.nur.repos.lillycham.<package>`, for example `pkgs.nur.repos.lillycham.dq`.
 
 As a flake: `github:lillycham/nur-packages#<package>`, for example `nix run github:lillycham/nur-packages#dq`.
+
+### Shiki service
+
+Import `inputs.nur-packages.homeModules.shiki` in Home Manager.
+With NUR, import `pkgs.nur.repos.lillycham.modules.shiki` instead.
+The module uses the Shiki package from this repository.
+
+```nix
+{
+  services.shiki = {
+    enable = true;
+    probes = [
+      {
+        name = "site";
+        kind = "http";
+        url = "http://127.0.0.1:8080/";
+        every = 30;
+      }
+    ];
+  };
+}
+```
+
+The service uses launchd on macOS and a user systemd service on Linux.
 
 ## Licence
 
