@@ -5,6 +5,7 @@ Lilly's [NUR](https://github.com/nix-community/NUR) repository.
 | Package | Description |
 | --- | --- |
 | [akyuu](https://github.com/lillycham/akyuu) | A content-addressed memory store for AI agents |
+| [cern-httpd](https://github.com/lillycham/cern-httpd) | Tim Berners-Lee's early CERN web servers, ported to modern systems (macOS) |
 | [dq](https://github.com/lillycham/dq) | Query and manipulate directory trees with jq expressions |
 | [hydrus-tagger](https://github.com/lillycham/hydrus-tagger) | Import images into hydrus with WD tagger and OCR tags (macOS) |
 | [lambdash](https://github.com/lillycham/lambdash) | A functional shell with composable environments |
@@ -13,6 +14,7 @@ Lilly's [NUR](https://github.com/nix-community/NUR) repository.
 | [nibble-mlx-server](https://github.com/lillycham/nibble) | The MLX model server that nibble starts on demand (Apple silicon) |
 | [shiki](https://github.com/lillycham/shiki) | Scheduled probes that serve their results as JSON |
 | [why](https://github.com/lillycham/why) | Explain the origin of a file, command or listening port |
+| [worldwideweb](https://github.com/lillycham/worldwideweb) | Tim Berners-Lee's first web browser and editor, ported to modern macOS |
 
 ## Use
 
